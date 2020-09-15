@@ -3,13 +3,15 @@
 /****************/
 
 body {
-  background-color: #e1e3e4;
+  background-color: rgb(50, 62,76);
   font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  margin-bottom: 60px;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
   font-weight: 100;
+  color: white;
 }
 
 h2 {
@@ -33,6 +35,8 @@ h2 {
   max-width: 200px;
   border: 1px solid #75D4CA;
   outline: none;
+  color: white;
+
 }
 
 .source-desc {
@@ -55,13 +59,14 @@ h2 {
 
 .axis {
   font: 10px sans-serif;
+  color: white;
 }
 
 .axis path,
 .axis line,
 .domain {
   fill: none;
-  stroke: #000;
+  stroke: #ffffff;
   shape-rendering: crispEdges;
 }
 
@@ -74,7 +79,7 @@ h2 {
 }
 
 .axis-title {
-	fill: #888;
+	fill: #ffffff;
 	font-size: 12px;
 }
 
