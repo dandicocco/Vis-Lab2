@@ -95,6 +95,15 @@ function renderBarChart(data) {
       return height - y(d.Visitors);
     })
     .attr("width", x.bandwidth())
+    .style("opacity", 0);
+
+    //add bar transition
+    svg.selectAll("rect")
+        .transition()
+        .duration(1000)
+        .style("opacity", 1);
+
+  let peekBars = svg.selectAll("rect")
     .on("mouseover", function(event, d) {
       //Get this bar's x/y values, then augment for the tooltip
       let xPosition =
@@ -123,10 +132,16 @@ function renderBarChart(data) {
   // ---- DRAW AXIS	----
   xAxisGroup = svg
     .select(".x-axis")
+    .transition()       // X-axis transition
+    .duration(1000)
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis);
 
-  yAxisGroup = svg.select(".y-axis").call(yAxis);
+  yAxisGroup = svg
+    .select(".y-axis")
+    .transition()       // Y-axis transition
+    .duration(1000)
+    .call(yAxis)
 
   svg.select("text.axis-title").remove();
   svg
@@ -137,6 +152,18 @@ function renderBarChart(data) {
     .attr("dy", ".1em")
     .style("text-anchor", "end")
     .text("Annual Visitors");
+
+ /*          FIRST ATTEMPT AT AXIS TRANSITIONS, KEEPING B/C MAY BE USEFUL IN FUTURE
+  //add axis transition
+  d3.selectAll('.axis')
+    .style("opacity",0);
+
+  d3.selectAll('.axis')
+    .transition()
+    .duration(1000)
+    .style("opacity",1);
+  */
+
 }
 
 function errorMessage(message) {
