@@ -85,6 +85,18 @@ h2 {
 	font-size: 12px;
 }
 
+/*      Box styling, didn't look good enough
+svg { 
+    background: #3B4656;
+    border-radius: 5px;
+}
+*/
+
+rect{
+    stroke: whitesmoke;
+}
+
+
 /****************/
 /*   TOOLTIPS   */
 /****************/
